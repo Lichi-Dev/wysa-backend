@@ -18,7 +18,13 @@ const createUser = async (req, res) => {
       { nickname: result.nickname, id: result._id },
       process.env.SECRET_KEY
     );
-    res.status(201).json({ user: result, token: token });
+    res
+      .status(201)
+      .json({
+        user: result,
+        token: token,
+        message: "User created successfully",
+      });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: err.message });
