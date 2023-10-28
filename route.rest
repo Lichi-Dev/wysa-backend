@@ -1,0 +1,15 @@
+POST http://localhost:5000/api/user/signup 
+Content-Type: application/json
+
+{
+"nickname":"appu", "password":"bb123"
+}
+
+###
+
+POST http://localhost:5000/api/user/sleepchange/653d1f3dfd449477dafa6658
+Content-Type: application/json
+
+{
+ "sleepchange":"1week"
+}
