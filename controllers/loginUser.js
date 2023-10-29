@@ -20,7 +20,13 @@ const loginUser = async (req, res) => {
       { nickname: existingUser.nickname, id: existingUser._id },
       process.env.SECRET_KEY
     );
-    res.status(201).json({ user: existingUser, token: token });
+    res
+      .status(201)
+      .json({
+        user: existingUser,
+        token: token,
+        message: "User logged in successfully",
+      });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: err.message });

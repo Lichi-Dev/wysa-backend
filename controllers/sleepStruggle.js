@@ -1,7 +1,7 @@
 const User = require("../models/userSchema");
 
-const sleepChange = async (req, res) => {
-  const { sleepchange } = req.body;
+const sleepStruggle = async (req, res) => {
+  const { sleepstruggle } = req.body;
   const id = req.params.id;
   try {
     const existingUser = await User.findOne({ _id: id });
@@ -9,7 +9,7 @@ const sleepChange = async (req, res) => {
       return res.status(400).json({ message: "User doesn't exists" });
     }
     const result = await User.findByIdAndUpdate(id, {
-      formdata: { ...existingUser.formdata, sleepchange: sleepchange },
+      formdata: { ...existingUser.formdata, sleepstruggle: sleepstruggle },
     });
     res.status(201).json({ user: result, message: "Submitted" });
   } catch (err) {
@@ -18,4 +18,4 @@ const sleepChange = async (req, res) => {
   }
 };
 
-module.exports = sleepChange;
+module.exports = sleepStruggle;
