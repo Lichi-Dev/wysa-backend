@@ -2,16 +2,25 @@ POST http://localhost:5000/api/user/signup
 Content-Type: application/json
 
 {
-"nickname":"appu", "password":"bb123"
+"nickname":"rahul", "password":"rahul123"
 }
 
 ###
 
-PATCH http://localhost:5000/api/user/sleepchange/653d1f3dfd449477dafa6658
+PATCH http://localhost:5000/api/user/sleepchange/653eaa1a8374955d6493e2ee
 Content-Type: application/json
 
 {
- "sleepchange":"1week"
+ "sleepchange":["I would sleep through the night","I'd wake up on time, refreshed"]
+}
+
+####
+
+PATCH http://localhost:5000/api/user/sleepstruggle/653eaa1a8374955d6493e2ee
+Content-Type: application/json
+
+{
+ "sleepstruggle":"5week"
 }
 
 ###
@@ -20,5 +29,13 @@ POST http://localhost:5000/api/user/login
 Content-Type: application/json
 
 {
-"nickname":"appu", "password":"bb123"
+"nickname":"rahul", "password":"rahul123"
 }
+
+####
+
+GET http://localhost:5000/api/user/all
+
+####
+
+GET http://localhost:5000/api/user/653f6f88d571ba405d9e8898

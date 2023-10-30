@@ -8,9 +8,11 @@ const sleepStruggle = async (req, res) => {
     if (!existingUser) {
       return res.status(400).json({ message: "User doesn't exists" });
     }
-    const result = await User.findByIdAndUpdate(id, {
-      formdata: { ...existingUser.formdata, sleepstruggle: sleepstruggle },
-    });
+    const result = await User.findByIdAndUpdate(
+      id,
+      { $set: { "formdata.sleepstruggle": sleepstruggle } },
+      { returnOriginal: false }
+    );
     res.status(201).json({ user: result, message: "Submitted" });
   } catch (err) {
     console.log(err);
